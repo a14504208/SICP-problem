@@ -1,7 +1,10 @@
+from math import gcd
+
 class Rational:
     def __init__(self, numer, denom):
-        self.numer = numer
-        self.denom = denom
+        g = gcd(numer, denom)
+        self.numer = numer // g
+        self.denom = denom // g
 
     def numer(self):
         return self.numer
