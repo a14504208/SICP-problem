@@ -30,6 +30,22 @@ class Segment:
 
     def __repr__(self):
         return 'Segment({0}, {1})'.format(repr(self.start()), repr(self.end()))
+
+def midpoint(p1, p2):
+    """
+    Return midpoint between p1 and p2
+    """
+    
+    x1, y1 = p1.x(), p1.y()
+    x2, y2 = p2.x(), p2.y()
+
+    return Point((x1 + x2)/2, (y1 + y2)/2)
+
+def midpoint_segment(line):
+    """
+    Return midpoint of the Segment line
+    """
+    return midpoint(line.start(), line.end())
               
 if __name__ == '__main__':
     a = Point(3, 5)
