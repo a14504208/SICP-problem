@@ -31,7 +31,7 @@ def is_prime(n):
 
 def expmod(base, exp, m):
     """
-    Return the remainder of base raised to exp modulo m
+    Return the remainder of base raised to exp modulom,
     """
     remain = 1
     
@@ -39,7 +39,13 @@ def expmod(base, exp, m):
         if exp == 0:
             return remain
         elif exp % 2 == 0:
-            base = (base * base) % m
+            if base == 1 or base == m - 1:
+                base = (base * base) % m
+            else:
+                base = (base * base) % m
+                if base == 1:
+                    return 0
+            
             exp = exp // 2
         else:
             exp -= 1
