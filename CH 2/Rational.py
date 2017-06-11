@@ -3,14 +3,13 @@ from math import gcd
 class Rational:
     def __init__(self, numer, denom):
         g = gcd(numer, denom)
-        self.numer = numer // g
-        self.denom = denom // g
+        self.value = (numer // g, denom // g)
 
     def numer(self):
-        return self.numer
+        return self.value[0]
 
     def denom(self):
-        return self.denom
+        return self.value[1]
 
     def __str__(self):
         return '{0} / {1}'.format(self.numer(), self.denom())
