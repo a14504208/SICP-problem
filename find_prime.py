@@ -32,6 +32,7 @@ def is_prime(n):
 def expmod(base, exp, m):
     """
     Return the remainder of base raised to exp modulom,
+    signal 0 if find nontrivial square root of 1 modulo m
     """
     remain = 1
     
