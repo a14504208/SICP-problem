@@ -9,6 +9,12 @@ class Rational:
     def denom(self):
         return self.denom
 
+    def __str__(self):
+        return '{0} / {1}'.format(self.numer(), self.denom())
+
+    def __repr__(self):
+        return 'Rational({0}, {1})'.format(self.numer(), self.denom())
+
     def __add__(self, rat):
         n1, d1 = self.numer(), self.denom()
         n2, d2 = rat.numer(). rat.numer()
